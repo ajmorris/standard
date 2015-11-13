@@ -23,7 +23,7 @@ class Standard_Ad_300x250 extends WP_Widget {
 			'classname' 	=> __( 'standard-ad-300x250', 'standard' ),
 			'description' 	=> __( 'Display a 300x250 advertisement.', 'standard' )
 		);
-		$this->WP_Widget( 'standard-ad-300x250', __( '300x250 Ad', 'standard' ), $widget_opts );
+		parent::__construct( 'standard-ad-300x250', __( '300x250 Ad', 'standard' ), $widget_opts );
 
 		// We don't want to load these on the Appearance Options because we're overiding window.send_to_editor there, too.
 		global $pagenow;

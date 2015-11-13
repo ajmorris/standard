@@ -17,7 +17,7 @@ class Standard_Influence extends WP_Widget {
 			'classname' 	=> __( 'standard-social-influence', 'standard' ), 
 			'description' 	=> __( 'Display your social influence by showcasing Twitter followers and Facebook fans.', 'standard' )
 		);	
-		$this->WP_Widget( 'standard-influence-widget', __( 'Social Influence', 'standard' ), $widget_opts );
+		parent::__construct( 'standard-influence-widget', __( 'Social Influence', 'standard' ), $widget_opts );
 				
 		add_action( 'admin_print_styles', array( $this, 'register_admin_styles' ) );
 		
