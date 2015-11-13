@@ -19,7 +19,7 @@ class Standard_Nav_Walker extends Walker_Nav_Menu {
 	 * @version	1.0
 	 * @since	3.0
 	 */
-	function start_lvl( &$output, $depth, $args ) {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		if($depth >= 1) {
 			$output .= apply_filters( 'walker_nav_menu_start_lvl', '<ul class="dropdown-menu submenu-hide">', $depth, $args );
 		} else {
@@ -37,7 +37,7 @@ class Standard_Nav_Walker extends Walker_Nav_Menu {
 	 * @version	1.0
 	 * @since	3.0
 	 */
-	function start_el( &$output, $item, $depth, $args ) {
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 		
 		$css_classes = implode( ' ', $item->classes );
 		
@@ -123,7 +123,7 @@ class Standard_Nav_Walker extends Walker_Nav_Menu {
 	 * @version	1.0
 	 * @since	3.0
 	 */
-	function end_el( &$output, $item, $depth, $args ) {
+	function end_el( &$output, $item, $depth = 0, $args = array() ) {
 		$output .= apply_filters( 'nav_walker_end_el', '</li>', $item, $depth, $args );
 	} // end end_el
 	
@@ -136,7 +136,7 @@ class Standard_Nav_Walker extends Walker_Nav_Menu {
 	 * @version	1.0
 	 * @since	3.0
 	 */
-	function end_lvl( &$output, $depth, $args ) {
+	function end_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= apply_filters( 'nav_walker_end_lvl', '</ul>', $depth, $args );
 	} // end end_lvl
 	
